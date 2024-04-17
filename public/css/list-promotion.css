@@ -1,0 +1,104 @@
+.first-card{
+    height: 98%;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.second-card{
+    height: 92%;
+    width: 95%;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+}
+
+.btn{
+    border: none;
+    padding: 13px 18px;
+    border-radius: 5px;
+}
+
+.form-control{
+    width: 62%;
+    height: 46px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+.right-parent{
+    position: relative;
+}
+
+.design-icone{
+    position: absolute;
+    left: 203px;
+    top: 13px;
+}
+
+.nbitems {
+    width: 20%;
+    svg {
+        position: absolute;
+        left: 11.4%;
+        width: 2%;
+        height: 2%;
+    }
+}
+
+.pages select {
+    width: 16%;
+    border: none;
+    background-color: transparent;
+    outline: 0;
+    font-size: 100%;
+    font-weight: bold;
+}
+
+.pagination {
+    width: 20%;
+    display: flex;
+    justify-content: space-around;
+    svg {
+        position: absolute;
+        bottom: 2%;
+        left: 9.5%;
+        width: 2%;
+        height: 2%;
+    }
+}
+
+.pagination button {
+    border: none;
+    background-color: transparent;
+    outline: 0;
+    color: rgb(24, 49, 83);
+    cursor: pointer;
+    width: 10%;
+    height: 16%;
+    svg {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%
+    }
+}
+
+.me{
+    background-color: #009187!important;
+    color: white!important;
+}
+
+.mt-list{
+    margin-top: 5%;
+}
+
+input[type="checkbox"]{
+    accent-color:#009187;;
+}
+

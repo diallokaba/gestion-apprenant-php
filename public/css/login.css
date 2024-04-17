@@ -1,0 +1,102 @@
+
+.container-login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+.card-loging{
+    background-color: white;
+    width: 25%;
+    height: 35%;
+    padding: 1%;
+    border-radius: 5px;
+}
+
+.login-logo{
+    background-image: url('../images/sonatel.png');
+    width: 21%;
+    height: 6%;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.form-control-login{
+    width: 100%;
+    height: 138%;
+    border: none;
+    outline: none;
+    padding-left: 1.5%;
+    font-size: 1.05rem;
+    border-radius: 5px;
+}
+
+.h-16{
+    height: 16%;
+}
+
+.mb-8{
+    margin-bottom: 8%;
+}
+
+.mt-2{
+    margin-top: 2%;
+}
+
+.mb-l-15{
+    margin-bottom: 15%;
+}
+
+
+.asterisk{
+    color: red;
+}
+
+.form-control-email{
+    width: 100%;
+    height: 130%;
+    border: 1px solid rgb(167, 167, 167);
+    outline: none;
+    padding-left: 1.5%;
+    font-size: 1.05rem;
+    border-radius: 5px;
+}
+
+.password-eye{
+    position: relative;
+}
+
+.eye-slash{
+    position: absolute;
+    border: none;
+    background: none;
+    top: 107%;
+    right: 2%;
+    font-size: 1.05rem;
+}
+
+.flex-login{
+    display: flex;
+    justify-content: space-between;
+    width: 25%;
+    margin-top: 1%;
+}
+
+.btn-login{
+    margin-top: 1%;
+    width: 25%;
+    height: 10%;
+    cursor: pointer;
+}
+
+.log{
+    width: 100%;
+    height: 50%;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+

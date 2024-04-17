@@ -1,0 +1,148 @@
+.card-new-referentiel{
+    display: flex;
+}
+
+.left-part{
+    flex: 4;
+}
+
+.right-part{
+    margin-left: 10px;
+    flex: 1;
+    height: 50px;
+}
+
+.flex-card{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.card-ref{
+    background-color: white;
+    border-radius: 5px;
+    width: 23.5%;
+    height: 338px;
+}
+
+.p-15{
+    padding: 15px;
+}
+
+.mb-ref-15{
+    margin-bottom: 15px;
+}
+
+.card-right{
+    width: 100%;
+    height: fit-content;
+    background-color: white;
+}
+
+.style-libelle{
+    width: 100%;
+    position: relative;
+}
+
+.form-control-ref{
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    padding-left: 33px;
+}
+
+.user-1{
+    position: absolute;
+    bottom: 14px;
+    left: 10px;
+}
+
+.btn-ref{
+    margin-top: 20px;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+.img-referentiel{
+    /*background-image: url('../images/salle.jpeg');*/
+    width: 100%;
+    height: 60%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+}
+
+.mt-ref-10{
+    margin-top: 10px;
+}
+
+.mt-ref-20{
+    margin-top: 20px;
+}
+
+.switch{
+    position: relative;
+    display: inline-block;
+    width: 80px;
+    height: 35px;
+}
+
+.switch input[type="checkbox"]{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider::before{
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(46px);
+}
+
+/* Rounded sliders */
+.slider.rounded {
+    border-radius: 34px;
+}
+
+
+.slider.rounded:before {
+    border-radius: 50%;
+}
+
+.m-height-scroll{
+    max-height: 100px;
+    overflow: hidden;
+    overflow-y: scroll;
+}

@@ -1,0 +1,198 @@
+/* Styles du modal */
+.modal-student {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    padding-top: 60px;
+}
+
+/* Affichage du popup */
+.modal-student:target {
+    z-index: 2;
+    display: block;
+}
+
+/* Affichage du modal lorsque la cible est sélectionnée */
+/* Conteneur du popup */
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ajustement de la largeur pour les écrans larges */
+    max-width: 1200px; /* Limitation de la largeur maximale */
+    position: relative;
+}
+
+/* Styles de l'en-tête du modal */
+.modal-student .head {
+    padding: 1%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f8f8;
+    width: 100%;
+}
+
+.modal-student .close {
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* style du bouton pour fermer */
+.close:hover,
+.close:focus {
+    color: black;
+    cursor: pointer;
+}
+
+/* Styles des liens */
+.modal-student a{
+    text-decoration: none;
+}
+
+/* Styles des sections du popup */
+.modal-student .section {
+    position: relative;
+    margin-top: 5%; /* Espacement supérieur */
+}
+
+/* Styles des boutons */
+.modal-student .btn {
+    background-color: #038e89;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+/* Styles pour la première ligne de contenu */
+.line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5% 0; /* Espacement supérieur et inférieur */
+}
+
+/* Styles pour les éléments de la première ligne de contenu */
+.line :nth-child(1) {
+    height: 50px;
+    color: white;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    margin-right: 1%;
+}
+
+.line :nth-child(3) {
+    width: 48%; /* Largeur réduite pour les écrans plus petits */
+}
+
+/* Styles pour le groupe d'entrées */
+.input-group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.modal-student .input-group > div {
+    width: 49%;
+    margin-bottom: 10px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Styles pour le bouton "Annuler" */
+.modal-student .cancel-btn {
+    padding: 10px 15px; 
+    width: 30%;
+    background: #f0edf4; 
+    color: black; 
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+}
+
+/* Styles pour les champs d'entrée */
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="file"],
+.input-group input[type="date"],
+.input-group select {
+    width: calc(100% - 20px); /* Largeur ajustée avec marge */
+    padding: 12px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+/* Nouveaux styles pour le conteneur des boutons */
+.btn-container {
+    position: absolute;
+    bottom: 10%;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between; 
+    width: 35%; 
+    max-width: 600px;
+}
+
+/* Styles pour l'icône de champ date */
+.date-input-container {
+    position: relative;
+}
+
+[type="date"]::-webkit-calendar-picker-indicator {
+    display: none; 
+}
+
+.date-input-container input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 30px; 
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: transparent; /* Fond transparent pour masquer l'icône par défaut */
+}
+
+.date-input-container input[type="date"] + .fa-calendar-day {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 5%;
+    top: 60%;
+    height: 40%; /* Largeur ajustée de l'icône */
+    width: 5%; /* Largeur ajustée de l'icône */
+    transform: translateY(-50%);
+    background-color: #038e89;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
