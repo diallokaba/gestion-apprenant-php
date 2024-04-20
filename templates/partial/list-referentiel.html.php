@@ -23,7 +23,7 @@
                 <div class="style-libelle mt-ref-20">
                     <span class="user-1"><i class="far fa-user"></i></span>
                     <label>Libelle</label>
-                    <input type="text" class="form-control-ref mt-10" name="libelle" placeholder="Entrer le libelle">
+                    <input type="text" class="form-control-ref mt-10" id="libelle-ref" name="libelle" placeholder="Entrer le libelle" value="<?=isset($_POST["libelle"]) ? $_POST["libelle"] : '' ?>">
                 </div>
                 <?php 
                     if($libEmptyOrNull){
@@ -33,7 +33,7 @@
                 <div class="style-libelle mt-ref-20">
                     <span class="user-1"><i class="far fa-user"></i></span>
                     <label>Description</label>
-                    <input type="text" class="form-control-ref mt-ref-10" name="description" placeholder="Entrer la description">
+                    <input type="text" class="form-control-ref mt-ref-10" id="description-ref" name="description" placeholder="Entrer la description" value="<?=isset($_POST["description"]) ? $_POST["description"] : '' ?>">
                 </div>
                 <?php 
                     
@@ -52,7 +52,11 @@
                 </div>
                 <div class="mt-ref-20">
                     <label>Sélectionner une image</label>
-                    <input type="file" class="mt-ref-10" name="image" accept="image/*">
+                    <input id="style-image-file" type="file" class="mt-ref-10" name="image" accept="image/*,.doc,.docx,application/pdf,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" onchange="previewFile(this)">
+                    <div>
+                        <img id="preview" src="#" alt="Aperçu de l'image" style="display: none; width: 200px; max-height: 200px; margin-top: 10px">
+                    </div>
+                    <p id="fileTypeError" style="color: red; display: none; margin-top: 10px;">Le type de fichier choisi n'est pas bon.</p>
                 </div>
                 <div class="mt-20 d-flex-jc-center">
                     <button type="submit" class="btn-ref btn-success">Enregistrer</button>
@@ -74,6 +78,30 @@
             hiddenInput.value = "1";
         } else {
             hiddenInput.value = "0";
+        }
+    }
+
+    function previewFile(input){
+        var file = input.files[0];
+        var preview = document.getElementById('preview');
+        var fileTypeError = document.getElementById('fileTypeError');
+
+        if (file) {
+            var fileType = file.type.split('/')[0];
+            if (fileType === 'image') {
+                var reader = new FileReader();
+
+                reader.onload = function(event) {
+                    preview.src = event.target.result;
+                    preview.style.display = 'block';
+                    fileTypeError.style.display = 'none';
+                }
+
+                reader.readAsDataURL(file);
+            } else {
+                preview.style.display = 'none';
+                fileTypeError.style.display = 'block';
+            }
         }
     }
 </script>

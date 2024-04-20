@@ -18,7 +18,7 @@
 
         return $promotions;
     }
-    function listPromotion(){
+    /*function listPromotion(){
         return $promotions = [
             [
                 "libelle" => "Promotion 6",
@@ -57,7 +57,7 @@
                 "state" => false
             ]
         ];
-    }
+    }*/
 
     function enablePromotion($id){
         // Récupérer la liste des promotions

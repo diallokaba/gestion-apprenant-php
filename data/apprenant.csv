@@ -1,14 +1,15 @@
-Diallo,Ibrahima,diallo@gmail.com,M,787331202,1
-Bah,khalil,khalil@gmail.com,M,773221412,2
-Diallo,Ibrahima,diallo@gmail.com,M,761735729,3
-Sow,Fatima,fatima@gmail.com,F,772335656,4
-Diallo,Aminata,aminata@gmail.com,F,770000000,4
-Mahmoud,"Ibn Ibrahima",mahmoud@gmail.com,M,770110101,6
-Djibril,Conde,conde@gmail.com,M,770110102,5
-Wilfried,Zaha,zaha@gmail.com,M,787331202,1
-Omar,"ibn khatab",khalil@gmail.com,M,773221412,6
-Ousmane,"ibn afan",diallo@gmail.com,M,761735729,6
-ALi,"ibn aly talib",fatima@gmail.com,F,772335656,6
-Hamza,Medine,aminata@gmail.com,F,770000000,6
-Diallo,"Mouctar",mahmoud@gmail.com,M,770110101,1
-DIallo,Lamarana,conde@gmail.com,M,770110102,5
+Admin,Admin,admin@gmail.com,passer@123,M,780000000,0,ROLE_ADMIN
+Diallo,Ibrahima,diallo@gmail.com,123passer,M,787331202,1,ROLE_APPRENANT
+Bah,khalil,khalil@gmail.com,passer,M,773221412,2,ROLE_APPRENANT
+Diallo,Ibrahima,diallo@gmail.com,passer,M,761735729,3,ROLE_APPRENANT
+Sow,Fatima,fatima@gmail.com,passer,F,772335656,4,ROLE_APPRENANT
+Diallo,Aminata,aminata@gmail.com,passer,F,770000000,4,ROLE_APPRENANT
+Mahmoud,"Ibn Ibrahima",mahmoud@gmail.com,passer,M,770110101,6,ROLE_APPRENANT
+Djibril,Conde,conde@gmail.com,passer,M,770110102,5,ROLE_APPRENANT
+Wilfried,Zaha,zaha@gmail.com,passer,M,787331202,1,ROLE_APPRENANT
+Omar,"ibn khatab",khalil@gmail.com,passer,M,773221412,6,ROLE_APPRENANT
+Ousmane,"ibn afan",diallo@gmail.com,passer,M,761735729,6,ROLE_APPRENANT
+ALi,"ibn aly talib",fatima@gmail.com,passer,F,772335656,6,ROLE_APPRENANT
+Hamza,Medine,aminata@gmail.com,passer,F,770000000,6,ROLE_APPRENANT
+Diallo,"Mouctar",mahmoud@gmail.com,passer,M,770110101,1,ROLE_APPRENANT
+DIallo,Lamarana,conde@gmail.com,passer,M,770110102,5,ROLE_APPRENANT

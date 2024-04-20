@@ -62,8 +62,8 @@
                 <a href="#" class="border-calandar" style="margin-right:10px"><i class="far fa-calendar-alt"></i>&nbsp;&nbsp;20 March 2024</a></a>
                 <a href="#" class="style-minus" style="margin-right:10px"><i class="fas fa-minus"></i></a>
                 <div style="margin-right:10px">
-                    <p>SUPER_ADMIN</p>
-                    <p><span style="color: #009187;">ADMIN ADMIN</span>&nbsp;<i class="fas fa-angle-down"></i></p>
+                    <p><?=$_SESSION["role"]?></p>
+                    <p><span style="color: #009187;"><?=$_SESSION["nom"]?>&nbsp;<?=$_SESSION["prenom"]?></span>&nbsp;<i class="fas fa-angle-down"></i></p>
                 </div>
             </div>
         </div>

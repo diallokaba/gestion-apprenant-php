@@ -18,12 +18,26 @@
     <?php
 
         include('../config/bootstrap.php');
+        include("../models/promotion.model.php");
+        $promotions = getPromotion();
         session_start();
+        $_SESSION["activeSession"] = isset($_SESSION['activeSession']) ? $_SESSION['activeSession'] : null;
+        if($_SESSION["activeSession"] == null){
+            foreach($promotions as $p){
+                if($p["state"] == true){
+                    $_SESSION["activeSession"] = $p["id"];
+                    break;
+                }
+            }
+        }
         $activeNumberPromo = $_SESSION["activeSession"];
 
         $libEmptyOrNull = false;
         $descEmptyOrNull = false;
         $refAlreadyExists = false;
+        $emptyEmail = false;
+        $emptyPassword = false;
+        $goodCredentials = true;
 
         if(!isset($_POST["layout"])){
             include("../templates/login.html.php");  
@@ -44,14 +58,13 @@
             $presences = filterPresence($_SESSION["status"], $_SESSION["ref"], $_SESSION["date"]);
             include("../templates/partial/layout.html.php");
         }else if($_POST["layout"] == 'list-apprenant'){
-            if(isset($_POST["global_search"])){
-                include("../models/apprenant.model.php");   
+            include("../models/apprenant.model.php");
+            if(isset($_POST["global_search"])){   
                 $apprenants = getApprenant();
                 $value = $_POST["global_search"];
                 $apprenants = globalSearchHeader($value, $apprenants);
                 include("../templates/partial/layout.html.php");
             }else{
-                include("../models/apprenant.model.php");
                 $apprenants = getApprenant();
                 include("../templates/partial/layout.html.php");
             }
@@ -75,7 +88,6 @@
                     $libEmptyOrNull = true;
                     $descEmptyOrNull = true;
                 }else{
-
                     if(!empty($libelle) && empty($description)){
                         $libEmptyOrNull = false;
                         $descEmptyOrNull = true;
@@ -93,7 +105,13 @@
                     }
                 }
                 if(!$refAlreadyExists && !empty($libelle) && !empty($description)){
-                    saveReferentiel($state_ref, $libelle, $description, $selectedImage, $activeNumberPromo);
+                    if((int)$state_ref == 0){
+                        saveReferentiel($state_ref, $libelle, $description, $selectedImage, 0);
+                    }else{
+                        saveReferentiel($state_ref, $libelle, $description, $selectedImage, $activeNumberPromo);
+                    }
+                    $_POST["libelle"] = "";
+                    $_POST["description"] = "";
                     $referentiels = getReferentiel();
                 }
                 include("../templates/partial/layout.html.php");
@@ -101,20 +119,55 @@
                 include("../templates/partial/layout.html.php");
             }
         }else if($_POST["layout"] == "list-promotion"){
-            include("../models/promotion.model.php");
             if(isset($_POST["send-check"])){
                 $id = $_POST["send-check"];
                 $_SESSION["activeSession"] = $id;
                 $promotions = enablePromotion($id);
                 include("../templates/partial/layout.html.php");
             }else{
-                $promotions = getPromotion();
                 include("../templates/partial/layout.html.php");
             }
         }        
         else{
-            include("../templates/partial/layout.html.php");
+            if(isset($_POST["connexion"])){
+                $email = $_POST["email"];
+                $password = $_POST["password"];
+                if(empty($email) && empty($password)){
+                    $emptyEmail = true;
+                    $emptyPassword = true;
+                }else{
+                    if(!empty($email) && empty($password)){
+                        $emptyEmail = false;
+                        $emptyPassword = true;
+                    }
+                    if(!empty($password) && empty($email)){
+                        $emptyEmail = true;
+                        $emptyPassword = false;
+                        include("../templates/login.html.php");
+                    }
+                }
+
+                if(!empty($email) && !empty($password)){
+                    include("../models/apprenant.model.php");
+                    $goodCredentials = checkCredentials($email, $password);
+                }
+
+                if(!empty($email) && !empty($password) && $goodCredentials != false){
+                    $connectedUser = getConnectedUserInfos();
+                    $_SESSION["email"] = $connectedUser["email"];
+                    $_SESSION["nom"] = $connectedUser["nom"];
+                    $_SESSION["prenom"] = $connectedUser["prenom"];
+                    $_SESSION["role"] = $connectedUser["role"];
+                    include("../templates/partial/layout.html.php");
+                }else{
+                    include("../templates/login.html.php");
+                }
+            }else{
+                include("../templates/login.html.php"); 
+            }
+             
         }
     ?>
 </body>
 </html>
+
