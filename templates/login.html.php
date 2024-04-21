@@ -21,6 +21,11 @@
                     echo "<div style='color: red; margin-top: -20px; margin-bottom: 17px;'>L'adresse e-mail est obligatoire</div>";
                 }
             ?>
+            <?php
+                if(!$emailIsValide){
+                    echo "<div style='color: red; margin-top: -20px; margin-bottom: 17px;'>Votre adresse email est incorrecte</div>";
+                }
+            ?>
             <div class="h-16 password-eye" >
                 <label>Password <span class="asterisk">*</span></label>
                 <!-- <p class="asterisk-password">*</p> -->

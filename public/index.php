@@ -17,8 +17,8 @@
 <body>
     <?php
 
-        include('../config/bootstrap.php');
-        include("../models/promotion.model.php");
+        include '../config/bootstrap.php';
+        include "../models/promotion.model.php";
         $promotions = getPromotion();
         session_start();
         $_SESSION["activeSession"] = isset($_SESSION['activeSession']) ? $_SESSION['activeSession'] : null;
@@ -38,9 +38,10 @@
         $emptyEmail = false;
         $emptyPassword = false;
         $goodCredentials = true;
+        $emailIsValide = true;
 
         if(!isset($_POST["layout"])){
-            include("../templates/login.html.php");  
+            include "../templates/login.html.php";  
         }else if($_POST["layout"] == 'list-presence'){
             include("../models/presence.model.php");
             $_SESSION["status"] = isset($_SESSION['status']) ? $_SESSION['status'] :  'status';
@@ -130,6 +131,7 @@
         }        
         else{
             if(isset($_POST["connexion"])){
+                require_once "../validator/data-validator.php";
                 $email = $_POST["email"];
                 $password = $_POST["password"];
                 if(empty($email) && empty($password)){
@@ -148,16 +150,19 @@
                 }
 
                 if(!empty($email) && !empty($password)){
-                    include("../models/apprenant.model.php");
-                    $goodCredentials = checkCredentials($email, $password);
+                    if(emailValidator($email)){
+                        include("../models/apprenant.model.php");
+                        $goodCredentials = checkCredentials($email, $password);
+                    }else{
+                        $emailIsValide = false;
+                    }
                 }
 
-                if(!empty($email) && !empty($password) && $goodCredentials != false){
-                    $connectedUser = getConnectedUserInfos();
-                    $_SESSION["email"] = $connectedUser["email"];
-                    $_SESSION["nom"] = $connectedUser["nom"];
-                    $_SESSION["prenom"] = $connectedUser["prenom"];
-                    $_SESSION["role"] = $connectedUser["role"];
+                if(!empty($email) && !empty($password) && $goodCredentials != false && $emailIsValide == true){
+                    $_SESSION["email"] = $userInfo["email"];
+                    $_SESSION["nom"] = $userInfo["nom"];
+                    $_SESSION["prenom"] = $userInfo["prenom"];
+                    $_SESSION["role"] = $userInfo["role"];
                     include("../templates/partial/layout.html.php");
                 }else{
                     include("../templates/login.html.php");

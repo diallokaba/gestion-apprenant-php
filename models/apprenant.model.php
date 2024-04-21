@@ -71,23 +71,18 @@
 
     function checkCredentials($email, $password){
         $apprenants = getAllApprenants();
-        global $user; // Accès à la variable globale
+        global $userInfo; // Accès à la variable globale
         foreach($apprenants as $app){
             if($app["email"] === trim($email) && $app["password"] === trim($password)){
-                $user["nom"] = $app["nom"];
-                $user["prenom"] = $app["prenom"];
-                $user["email"] = $app["email"];
-                $user["role"] = $app["role"];
-                $user["promotion"] = $app["promotion"];
+                $userInfo["nom"] = $app["nom"];
+                $userInfo["prenom"] = $app["prenom"];
+                $userInfo["email"] = $app["email"];
+                $userInfo["role"] = $app["role"];
+                $userInfo["promotion"] = $app["promotion"];
                 return true;
             }
         }
         return false;
-    }
-
-    function getConnectedUserInfos(){
-        global $user; 
-        return $user;
     }
 
     function getAllApprenants(){
