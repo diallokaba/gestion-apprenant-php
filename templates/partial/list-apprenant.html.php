@@ -1,12 +1,69 @@
+<div class="d-flex-s-between-align-i-center mt-15  mb-15">
+    <h3>Apprenant: promo<?php echo "<span style='color: #009187;'>($activeNumberPromo)</span>" ?></h3>
+    <div class="d-flex-align-i-center">
+        <div class="d-flex-align-i-center">
+            <h4>Liste</h4>&nbsp;
+            <p style="margin-bottom: 10px; font-weight: bold; font-size: 25px;">.</p>&nbsp;
+            <h4>Apprenants</h4> 
+        </div>
+    </div>
+</div>
+
 <div class="card-before mb-15">
     <div>
         <h4>Apprenants: <span style="color: #009187;">Promotion <?php echo $activeNumberPromo ?></span></h4>
     </div>
-    <div>
-        <h4>Référentiel: <span style="color: #009187;">Dev Web/Mobile</span></h4>
+    <div style="display: flex">
+        <h4>Référentiel: <span style="color: #009187;">Dev Web/Mobile</span></h4>&nbsp;&nbsp;
+        <div class="dropdown-app">
+          <button title="Filtrer par référentiel" class="dropdown-btn-app"><i class="fas fa-angle-down"></i></button>
+          <div class="dropdown-content-app <?=$_SESSION['dropdown']?>" id="dropdown-id">
+            <form action="" method="POST" id="send-form-ref"> 
+                <input type="hidden" name="layout" value="list-apprenant">
+                <input type="hidden" name="filter-by-ref-app">
+                <label for="dev_web">
+                    Dev Web/Mobile &nbsp;&nbsp;
+                    <input type="checkbox" onchange="this.form.submit()" name="Dev Web/Mobile" id="dev_web" <?php if(!empty($_SESSION["Dev Web/Mobile"])) echo 'checked';?>>
+                </label><br><br>
+                <label for="ref_dig">
+                    Referent Digital &nbsp;&nbsp;
+                    <input type="checkbox" onchange="this.form.submit()" name="Referent Digital" id="ref_dig" <?php if(!empty($_SESSION["Referent Digital"])) echo 'checked';?>>
+                </label><br><br>
+                <label for="aws">
+                    AWS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <!-- <input type="checkbox" onchange="this.form.submit()" name="AWS" id="aws" <?php if($_SESSION["AWS"] =="active")  echo 'checked';?>> -->
+                    <input type="checkbox" onchange="this.form.submit()" name="AWS" id="aws" <?php if(!empty($_SESSION["AWS"])) echo 'checked';?>>
+                </label><br><br>
+                <label for="securite">
+                    Cyber Securité &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="checkbox" onchange="this.form.submit()" name="Cyber Securité" id="securite" <?php if(!empty($_SESSION["Cyber Securité"])) echo 'checked';?>>
+                </label><br><br>
+              </form>
+            <!-- <form action="" method="POST">
+              <input type="hidden" name="layout" value="list-apprenant">
+              <input type="hidden" name="filter-by-ref-app">
+              <label for="dev_web">
+                Dev Web/Mobile &nbsp;
+                <input type="checkbox" name="list-referentiel[]" id="dev_web" value="Dev Web/Mobile">
+              </label><br><br>
+              <label for="ref_dig">
+                Referent Digital &nbsp;&nbsp;
+                <input type="checkbox" name="list-referentiel[]" id="ref_dig" value="Referent Digital">
+              </label><br><br>
+              <label for="aws">
+                AWS &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" name="list-referentiel[]" id="aws" value="AWS">
+              </label><br><br>
+              <label for="cyber">
+                Cyber Securité &nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" name="list-referentiel[]" id="cyber" value="Cyber Securité">
+              </label><br><br>
+              <button style="border: none; background: none; padding-bottom: 8px;" title="Filtrer" type="submit"><i class="fa fa-filter" style="font-size: 1.2rem" aria-hidden="true"></i></button>
+            </form> -->
+          </div>
+        </div>
     </div>
-</div>
-                
+</div>              
 
 <div class="card-app p-25">
     <div class="number-app d-flex-align-items-center-flex-d-column">
@@ -70,7 +127,19 @@
     </div>
 </div>
 
+<script>
+  let idDropdown =q document.getElementById('dropdown-id');
+  document.querySelectorAll('.dropdown-btn-app').forEach(button => {
+        button.addEventListener('click', function(event) {
+            if(idDropdown.classList.contains("activer")){
+              idDropdown.classList.remove("activer");
+            }else{
+              idDropdown.classList.add("activer");   
+            }
+        });
 
+  });
+</script>
 
 <!-- popup ADD STUDENT -->
 <!-- Le Modal (popup) -->

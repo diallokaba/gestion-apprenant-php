@@ -1,15 +1,23 @@
-Admin,Admin,admin@gmail.com,passer@123,M,780000000,0,ROLE_ADMIN
-Diallo,Ibrahima,diallo@gmail.com,123passer,M,787331202,1,ROLE_APPRENANT
-Bah,khalil,khalil@gmail.com,passer,M,773221412,2,ROLE_APPRENANT
-Diallo,Ibrahima,diallo@gmail.com,passer,M,761735729,3,ROLE_APPRENANT
-Sow,Fatima,fatima@gmail.com,passer,F,772335656,4,ROLE_APPRENANT
-Diallo,Aminata,aminata@gmail.com,passer,F,770000000,4,ROLE_APPRENANT
-Mahmoud,"Ibn Ibrahima",mahmoud@gmail.com,passer,M,770110101,6,ROLE_APPRENANT
-Djibril,Conde,conde@gmail.com,passer,M,770110102,5,ROLE_APPRENANT
-Wilfried,Zaha,zaha@gmail.com,passer,M,787331202,1,ROLE_APPRENANT
-Omar,"ibn khatab",khalil@gmail.com,passer,M,773221412,6,ROLE_APPRENANT
-Ousmane,"ibn afan",diallo@gmail.com,passer,M,761735729,6,ROLE_APPRENANT
-ALi,"ibn aly talib",fatima@gmail.com,passer,F,772335656,6,ROLE_APPRENANT
-Hamza,Medine,aminata@gmail.com,passer,F,770000000,6,ROLE_APPRENANT
-Diallo,"Mouctar",mahmoud@gmail.com,passer,M,770110101,1,ROLE_APPRENANT
-DIallo,Lamarana,conde@gmail.com,passer,M,770110102,5,ROLE_APPRENANT
+Admin,Admin,admin@gmail.com,passer@123,M,780000000,0,ROLE_ADMIN,""
+Kaba,Kaba,kaba@gmail.com,passer@123,M,784448793,0,ROLE_ADMIN,""
+Wane,Wane,wane@gmail.com,passer@123,M,782020202,0,ROLE_ADMIN,""
+Diallo,Ibrahima,diallokaba@gmail.com,123passer,M,787331202,1,ROLE_APPRENANT,""
+Bah,khalil,khalil@gmail.com,passer,M,773221412,2,ROLE_APPRENANT,""
+Diallo,Ibrahima,diallo@gmail.com,passer,M,761735729,3,ROLE_APPRENANT,"Dev Web/Mobile"
+Arda,Arda,arda@gmail.com,passer,M,761735729,3,ROLE_APPRENANT,"AWS"
+Snow,Snow,snow@gmail.com,passer,M,761735729,3,ROLE_APPRENANT,"Referent Digital"
+Dump,Dump,dump@gmail.com,passer,M,761735729,3,ROLE_APPRENANT,"Dev Web/Mobile"
+Youssouf,Youssouf,youssouf@gmail.com,passer,M,761735729,3,ROLE_APPRENANT,"Dev Web/Mobile"
+Star,Star,star@gmail.com,passer,M,761735729,3,ROLE_APPRENANT,"Referent Digital"
+Lion,Lion,lion@gmail.com,passer,M,761735729,3,ROLE_APPRENANT,"Dev Web/Mobile"
+Sow,Fatima,fatima@gmail.com,passer,F,772335656,4,ROLE_APPRENANT,""
+Diallo,Aminata,aminata@gmail.com,passer,F,770000000,4,ROLE_APPRENANT,""
+Mahmoud,"Ibn Ibrahima",mahmoud@gmail.com,passer,M,770110101,6,ROLE_APPRENANT,""
+Djibril,Conde,conde@gmail.com,passer,M,770110102,5,ROLE_APPRENANT,""
+Wilfried,Zaha,zaha@gmail.com,passer,M,787331202,1,ROLE_APPRENANT,""
+Omar,"ibn khatab",khalil@gmail.com,passer,M,773221412,6,ROLE_APPRENANT,""
+Ousmane,"ibn afan",diallo@gmail.com,passer,M,761735729,6,ROLE_APPRENANT,""
+ALi,"ibn aly talib",fatima@gmail.com,passer,F,772335656,6,ROLE_APPRENANT,""
+Hamza,Medine,aminata@gmail.com,passer,F,770000000,6,ROLE_APPRENANT,""
+Diallo,"Mouctar",mahmoud@gmail.com,passer,M,770110101,1,ROLE_APPRENANT,""
+DIallo,Lamarana,conde@gmail.com,passer,M,770110102,5,ROLE_APPRENANT,""

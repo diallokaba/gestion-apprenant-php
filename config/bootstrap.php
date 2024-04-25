@@ -19,4 +19,13 @@
         }
         return $results;
     }
+
+    function dump($data, $method){
+        if($method != null){
+            echo "<h5>$method</h5>";
+        }
+        echo "<pre>";
+            var_dump($data);
+        echo "</pre>";
+    }
     

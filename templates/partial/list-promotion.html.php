@@ -1,11 +1,29 @@
+<div class="d-flex-s-between-align-i-center mt-15  mb-15">
+    <h3>Promotion: <?php echo "<span style='color: #009187;'>$activeNumberPromo</span>" ?></h3>
+    <div class="d-flex-align-i-center">
+        <div class="d-flex-align-i-center">
+            <h4>Liste</h4>&nbsp;
+            <p style="margin-bottom: 10px; font-weight: bold; font-size: 25px;">.</p>&nbsp;
+            <h4>Promotions</h4> 
+        </div>
+    </div>
+</div>
+
 <div class="first-card">
     <div class="second-card">
         <div class="d-flex-s-between-align-i-center">
             <h3>Liste des promotions <span style="color: #009187;"><?php echo '('.count($promotions).')'?></span></h3>
-            <div class="right-parent">
-                <input type="text" class="form-control mr-15" placeholder="Rechercher ici">
-                <span class="design-icone"><i class="fas fa-search"></i></span>
-                <a href="#" class="btn btn-success"><i class="fas fa-plus"></i>&nbsp;Nouvelle</a>
+            <div class="d-flex-s-between-align-i-center">
+                <div class="search-and-icon">
+                    <input type="text" class="form-control-promo mr-15" placeholder="Rechercher ici">
+                    <span class="design-icone"><i class="fas fa-search"></i></span>
+                </div>
+                <form action="" method="post">
+                    <div>
+                        <input type="hidden" name="layout" value="create-promotion">
+                        <button type="submit" class="btn btn-success btn-promo"><i class="fas fa-plus"></i>&nbsp;&nbsp;Nouvelle</button>
+                    </div>
+                </form>
             </div>
         </div>
 

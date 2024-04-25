@@ -65,12 +65,72 @@
     border-radius: 5px;
 }
 
+.btn-promo{
+    font-size: 1rem;
+}
+
 #btn-side{
     color: blue;
     border: none;
     background-color: white;
 }
 
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn{
+    cursor: pointer;
+    border: none; 
+    background: none;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    /*min-width: 160px;*/
+    width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    right: -15px;
+  }
+
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #f1f1f1
+  }
+  
+
+  .dropdown:hover .dropdown-content{
+    display: block;
+  }
+
+  .dropdown-content .logout:hover {
+    background-color: #f1f1f1
+  }
+
+  .dropdown-content button {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  .logout{
+    color: red; 
+    cursor: pointer;
+    border: none;
+    background: none;
+  }
 
 
 

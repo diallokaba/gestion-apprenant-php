@@ -1,3 +1,14 @@
+<div class="d-flex-s-between-align-i-center mt-15  mb-15">
+    <h3>Référentiel: promo<?php echo "<span style='color: #009187;'>($activeNumberPromo)</span>" ?></h3>
+    <div class="d-flex-align-i-center">
+        <div class="d-flex-align-i-center">
+            <h4>Liste</h4>&nbsp;
+            <p style="margin-bottom: 10px; font-weight: bold; font-size: 25px;">.</p>&nbsp;
+            <h4>Référentiels</h4> 
+        </div>
+    </div>
+</div>
+
 <div class="card-new-referentiel">
     <div class="left-part">
         <div class="flex-card">

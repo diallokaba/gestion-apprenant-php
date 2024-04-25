@@ -1,3 +1,14 @@
+<div class="d-flex-s-between-align-i-center mt-15  mb-15">
+    <h3>Présence: promo<?php echo "<span style='color: #009187;'>($activeNumberPromo)</span>" ?></h3>
+    <div class="d-flex-align-i-center">
+        <div class="d-flex-align-i-center">
+            <h4>Liste</h4>&nbsp;
+            <p style="margin-bottom: 10px; font-weight: bold; font-size: 25px;">.</p>&nbsp;
+            <h4>Présences</h4> 
+        </div>
+    </div>
+</div>
+
 <div class="card-presence">
     <form action="" method="post">
         <input type="hidden" name="recherche" value="filter_presence">

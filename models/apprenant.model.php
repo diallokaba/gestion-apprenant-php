@@ -14,6 +14,8 @@
                 "genre" => $entry[4],
                 "telephone" => $entry[5],
                 "promotion" => $entry[6],
+                "role" => $entry[7],
+                "referentiel" => $entry[8]
             ];
             if($apprenant['promotion'] == $activePromo){
                 $apprenants[] = $apprenant;
@@ -88,6 +90,7 @@
     function getAllApprenants(){
         $data = readCSVFile("apprenant.csv");
         $apps = [];
+        global $onlyAdmin;
         foreach($data as $entry){
             $app = [
                 "nom" => $entry[0],
@@ -98,9 +101,24 @@
                 "telephone" => $entry[5],
                 "promotion" => $entry[6],
                 "role" => $entry[7],
+                "referentiel" => $entry[8]
             ];
             $apps [] = $app;
         }
         return $apps;
+    }
+
+    function filterByReferentiel($choices, $data){
+        $apprenants = [];
+        if(count($choices) !== 0 && count($data) !== 0){
+            foreach($choices as $choice){
+                foreach($data as $app){
+                    if($choice === $app["referentiel"]){
+                        $apprenants[] = $app;
+                    }
+                }
+            }
+        }
+        return $apprenants;
     }
 ?>
