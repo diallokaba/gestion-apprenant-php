@@ -192,7 +192,8 @@
             $isEmptyDateDebut = false;
             $isEmptyDateFin = false;
             $dateDebutIsBeforeTodayDate = false;
-            $dateFinIsBeforeTodayDate = false;
+            $dateFinIsBeforeBeginDate = false;
+            $message = "echec";
             if(isset($_POST["new-promo"])){
                 $libelle = $_POST["libelle"];
                 $dateDebut = $_POST["dateDebut"];
@@ -248,11 +249,23 @@
                     // Extraire uniquement la date sans l'heure, les minutes et les secondes
                     $dateDebutOnly = $dateDebutObj->format('Y-m-d');
                     $todayOnly = $today->format('Y-m-d');
+                    $dateFinOnly = $dateFinObj-> format('Y-m-d');
                     if($dateDebutOnly < $todayOnly){
                         $dateDebutIsBeforeTodayDate = true;
+                    }else{
+                        if($dateDebutOnly > $dateFinOnly){
+                            $dateFinIsBeforeBeginDate = true;
+                        }
                     }
                 }
 
+                if($isEmptyLibelle == false && $isEmptyDateDebut == false && $isEmptyDateFin == false && $dateDebutIsBeforeTodayDate == false && $dateFinIsBeforeBeginDate == false){
+                    savePromo($libelle, $dateDebutOnly, $dateFinOnly);
+                    $message = "succes";
+                    $_POST["libelle"] = "";
+                    $_POST["dateDebut"] = "";
+                    $_POST["dateFin"] = "";
+                }
             }
             include("../templates/partial/layout.html.php");
         }      

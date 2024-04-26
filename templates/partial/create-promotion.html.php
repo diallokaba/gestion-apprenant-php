@@ -23,7 +23,7 @@
             <div>
                 <label>Libelle <span style="color: red">*</span></label>
                 <div>
-                    <input type="text" name="libelle" class="form-control-new-promo mt-15" placeholder="Entrer le libelle">
+                    <input type="text" name="libelle" class="form-control-new-promo mt-15" placeholder="Entrer le libelle" value="<?= isset($_POST["libelle"]) ? $_POST["libelle"] : '' ?>">
                     <?php 
                         if($isEmptyLibelle){
                             echo "<div style='color:red; margin-top: 10px; margin-bottom: -8px;'>Veuillez saisir le libelle</div>";
@@ -35,7 +35,7 @@
                 <div class="date-style pr-15 ml-16">
                     <label>Date Début <span style="color: red">*</span></label>
                     <div class="mr-5">
-                        <input type="date" name="dateDebut" placeholder="MM/DD/YYYY" class="form-control-new-promo mt-15">
+                        <input type="date" name="dateDebut" placeholder="MM/DD/YYYY" class="form-control-new-promo mt-15" value="<?= isset($_POST["dateDebut"]) ? $_POST["dateDebut"] : '' ?>">
                         <?php 
                             if($isEmptyDateDebut){
                                 echo "<div style='color:red; margin-top: 10px; margin-bottom: -20px;'>Veuillez sélectionner la date de début de la promotion</div>";
@@ -51,7 +51,7 @@
                 <div class="date-style pl-15">
                     <label>Date Fin <span style="color: red">*</span></label>
                     <div>
-                        <input type="date" name="dateFin" placeholder="MM/DD/YYYY" class="form-control-new-promo mt-15">
+                        <input type="date" name="dateFin" placeholder="MM/DD/YYYY" class="form-control-new-promo mt-15" value="<?= isset($_POST["dateFin"]) ? $_POST["dateFin"] : '' ?>">
                         <?php 
                         if($isEmptyDateFin){
                             echo "<div style='color:red; margin-top: 10px; margin-bottom: -20px;'>Veuillez sélectionner la date de fin de la promotion</div>";
@@ -60,6 +60,11 @@
                     </div>
                 </div>
             </div>
+            <?php 
+                if($dateFinIsBeforeBeginDate){
+                    echo "<div style='color:red; margin-top: 15px; margin-bottom: -30px; text-align: center'>La date de fin doit être supérieur à la date de début</div>";
+                }
+            ?>
 
             <div class="d-flex-s-between-align-i-center mb-35 ml-16" style="margin-top: 40px">
                 <div>
@@ -76,7 +81,10 @@
         </form>
 
         <div <?php echo $isEmptyLibelle == true ? "class='mt-new-p-26'" : "class='mt-new-p-57'"  ?>>
-            <h3>Référentiels</h3>
+            <div style="display: flex; justify-content: space-between">
+                <h3>Référentiels</h3>
+                <h4 id="<?= $message ?>" style='display: none; color: green'>Promotion ajoutée avec succès</h4>
+            </div>            
         </div>
     </div>
 </div>
@@ -92,5 +100,16 @@
     function submitCreatePromotion() {
         // Soumettre le formulaire de création de promotion
         document.getElementById("create-promotion-form").submit();
+    }
+    
+    let message;
+    message = document.getElementById('succes').id;
+    console.log(message);
+    if(message != null && message == "succes"){
+        message = document.getElementById('succes');
+        message.style.display = 'block';
+        setTimeout(function() {
+            message.style.display = 'none';
+        }, 4000); 
     }
 </script>

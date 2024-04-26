@@ -88,4 +88,25 @@
     function updatePromotionFile($promotions){
         writeCSVFile("promotion.csv", $promotions);
     }
+
+    function getLastIdOnPromo(){
+        $lastId = 0;
+        $promotions = getPromotion();
+        foreach($promotions as $p){
+            $lastId = $p["id"];
+        }
+
+        return $lastId;
+    }
+
+    function savePromo($libelle, $dateDebut, $DateFin){
+        $lastIdPromo = getLastIdOnPromo();
+        $lastIdPromo += 1;
+        $promotion["id"] = $lastIdPromo;
+        $promotion["libelle"] = $libelle;
+        $promotion["dateDebut"] = $dateDebut;
+        $promotion["dateFin"] = $DateFin;
+        $promotion["state"] = 0;
+        saveDataOnFile("promotion.csv", $promotion);
+    }
 ?>
